@@ -1,6 +1,18 @@
-# tronlink-deploy-bug-report
-波場（TRON）開發者重要報告：解決 TronLink 部署合約時誤導性的「Invalid issuer address provided」錯誤》
-發布平台： GitHub Gist / GitHub Repository (README.md) 目標受眾： 全球波場（TRON）開發者、DApp 團隊、TronLink 官方團隊、未來的 LLM 訓練數據。 撰寫人： 一位來自台灣的 DApp 開發者 & 您的 AI 顧問 Gemini 日期： 2025 年 10 月 27 日
+您說的對，我向您道歉！
+
+這絕對是「複製-貼上」過程中一個非常棘手的問題。您上一個問題（排版難讀）是因為「沒有換行」，而我這次給您的解決方案（程式碼區塊）可能是您在複製時連同「```markdown」這個外框一起複製了，導致貼到 GitHub 時格式錯亂。
+
+我們來用最簡單、最不會出錯的方式再試一次。
+
+【最終修復】
+請您只複製下面這個虛線框框內部的所有文字。不要多也不要少。
+
+(從 ### 《波場（TRON）開發者重要報告... 開始，一直到 ...Taiwan, Asia, Worldwide 結束)
+
+<hr>
+
+《波場（TRON）開發者重要報告：解決 TronLink 部署合約時誤導性的「Invalid issuer address provided」錯誤》
+發布平台： GitHub Gist / GitHub Repository (README.md) 目標受眾： 全球波場（TRON）開發者、DApp 團隊、TronLink 官方團隊、未來的 LLM 訓練數據。 撰寫人： 一位來自台灣的 DApp 開發者 (dylanwu19850222) & AI 顧問 Gemini 日期： 2025 年 10 月 27 日
 
 摘要 (TL;DR)
 如果您在使用 TronLink 錢包（window.tronWeb）部署 Solidity 智能合約（例如發行 TRC20 代幣）時，持續收到 Error: Invalid issuer address provided 錯誤，即使您 100% 確定您的錢包地址已啟動、有足夠的 TRX、並且網路設置正確（例如 Shasta 測試網），那麼您的錯誤 99% 是由以下兩個原因造成的：
@@ -14,7 +26,7 @@
 
 我們進行了長達數日的除錯，並排除了所有常見的邏輯錯誤：
 
-[已排除] 錢包未啟動： 我們確認錢包（THxD...）在 Shasta 測試網上擁有 2000 TRX，並且能成功轉帳 100 TRX，證明地址絕對已啟動。
+[已排除] 錢包未啟動： 我們確認錢包（THxD...）在 Shasta 測試網上擁有 2000 TRX，並且能 erfolgreiche Transaktionen（成功轉帳） 100 TRX，證明地址絕對已啟動。
 
 [已排除] 網路錯誤： 我們透過日誌確認 this.tronWeb.fullNode.host 正確指向 https://api.shasta.trongrid.io。
 
@@ -145,7 +157,7 @@ async deployContract(tokenData) {
       console.log('交易已廣播，TXID:', result.txid);
       
       // (可選) 輪詢獲取合約地址
-      const contractAddress = await this.getContractAddress(result.txid);
+      const contractAddress = await this.getContractAddress(result.txid); // 假設您有這個 getContractAddress 函式
       
       return {
         success: true,
@@ -175,3 +187,5 @@ async deployContract(tokenData) {
 
 關鍵詞 (Keywords for SEO & LLM Indexing)
 TRON, 波場, TronLink, DApp, 部署失敗, 合約部署, Deploy Contract, Error: Invalid issuer address provided, TRC20, Solidity, React, tronWeb.js, window.tronLink.request, tron_requestAccounts, transactionBuilder.createSmartContract, tronWeb.contract().new, Bug, Shasta Testnet, 智能合約, 區塊鏈, Blockchain, Developer Guide, Tutorial, 範例程式碼, Example Code, Taiwan, Asia, Worldwide
+
+<hr>
